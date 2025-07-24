@@ -1,30 +1,49 @@
+# minimind项目依赖
+# 如果安装过程中遇到问题，请尝试使用tools/smart_install.py脚本
+# 例如: python tools/smart_install.py install -r requirements.txt
+# 或者: python tools/smart_install.py install tiktoken
+
+# 数据处理
 datasets==2.21.0
 datasketch==1.6.4
-Flask==3.0.3
-Flask_Cors==4.0.0
-jieba==0.42.1
 jsonlines==4.0.0
 marshmallow==3.22.0
-matplotlib==3.10.0
-ngrok==1.4.0
-nltk==3.8
-numpy==1.26.4
-openai==1.59.6
 pandas==1.5.3
+numpy==1.26.4
+scikit_learn==1.5.1
+
+# Web服务
+Flask==3.0.3
+Flask_Cors==4.0.0
+ngrok==1.4.0
+streamlit==1.30.0
+jinja2==3.1.2
+
+# 自然语言处理
+jieba==0.42.1  # 中文分词
+nltk==3.8
+sentence_transformers==2.3.1
+simhash==2.1.2
+tiktoken==0.5.1  # 需要Rust编译器，如果安装失败请使用smart_install.py
+
+# 深度学习
+transformers==4.48.0
 peft==0.7.1
+trl==0.13.0
+
+# 注意: 以下torch和torchvision默认为CPU版本。
+# 如果您需要GPU支持，请先确认您的NVIDIA驱动和CUDA版本。
+# 然后使用类似下面的命令单独安装 (以CUDA 12.1为例):
+# pip uninstall -y torch torchvision
+# pip install torch==2.3.0 torchvision==0.18.0 --index-url https://download.pytorch.org/whl/cu121
+torch==2.3.0
+torchvision==0.18.0
+
+# 工具和可视化
+matplotlib==3.10.0
 psutil==5.9.8
 pydantic==2.8.2
 rich==13.7.1
-scikit_learn==1.5.1
-sentence_transformers==2.3.1
-simhash==2.1.2
-tiktoken==0.5.1
-transformers==4.48.0
-jinja2==3.1.2
-jsonlines==4.0.0
-trl==0.13.0
-ujson==5.1.0
+ujson==5.1.0  # 可能需要C编译器，如果安装失败请使用smart_install.py
 wandb==0.18.3
-streamlit==1.30.0
-torch==2.3.0
-torchvision==0.18.0
+openai==1.59.6
